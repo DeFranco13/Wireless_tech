@@ -9,4 +9,11 @@ fi
 # Opstart Script
 
 /home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
-sudo cp /scan.json /home/franco/Desktop/wifi-scanner/Output/scan.json
+
+# Output files van PI exporteren naar git folder
+
+if [ -f /scan.json ] ; then
+	sudo cp /scan.json /home/franco/Desktop/wifi-scanner/Output/scan.json
+
+if [ -f /devices.txt ] ; then
+	sudo cp /devices.txt /home/franco/Desktop/wifi-scanner/Output/devices.txt
