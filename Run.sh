@@ -4,11 +4,12 @@
 
 if ping -c 3 1.1.1.1 &> /dev/null; then
 	./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
+
+# Opstart script enkel als er geen wifi is
+
+else /home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
+
 fi
-
-# Opstart Script
-
-/home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
 
 # Output files van PI exporteren naar git folder
 
