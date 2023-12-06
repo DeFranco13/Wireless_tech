@@ -3,6 +3,7 @@ import subprocess
 import json
 import os
 import nmcli
+import nmap
 
 class WifiScanner:
    def __init__(self):
@@ -15,7 +16,10 @@ class WifiScanner:
          self.read_json()
          self.get_networks()
          self.sniff_wifi()
+         self.get_handshake()
+         self.deauth_wifi()
          self.log_results()
+         self.pushFile()
 
    def get_networks(self):
       if self.os_computer == 'Windows':
@@ -57,7 +61,7 @@ class WifiScanner:
               os.system(f'airodump-ng -c {connection.chan} --bssid {connection.ssid} -w HandshakeOf{connection.ssid} wlan0')
 
    def deauth_wifi(self):
-       if self.deauth == true:
+       if self.deauth == True:
           for connection in connections:
               os.system(f'aireplay-ng -0 1 -a')
 
@@ -65,8 +69,13 @@ class WifiScanner:
        for connection in connections:
            if connection.security == "":
               os.system(f'nmcli -a d wifi connect {connection.bssid}')
-             # nmap -sn 192.168.0.1/24 -oN f'{connection.bssid}Devices'.txt
+              device_scan = nmap.PortScanner()
+              device = device_scan.scan("192.168.2.1/24", arguments='-sn', sudo=True)
               os.system(f'nmcli c delete {connection.bssid}')
+
+   def pushFile():
+       if ping -c 3 1.1.1.1 &> /dev/null ; then
+          os.system('./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPush.sh')
 
    def read_json(self):
        if not os.path.exists('scan.json'):

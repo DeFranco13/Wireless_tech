@@ -2,7 +2,9 @@
 
 # Pull van project
 
-./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
+if ping -c 3 1.1.1.1 &> /dev/null; then
+	./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
+fi
 
 # Opstart Script
 
