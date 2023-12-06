@@ -5,10 +5,6 @@ AP - Project Wireless tech
 
 - grafiek weergeven van scan
 
-- github scripts enkel uitvoeren als er wifi verbonden is 
-	- miss een idee om bij open wifi's te verbinden en zodat er al naar github gepusht kan worden en pull
-		- Dit zorgt ervoor dat we kunnen meevolgen als van de scan
-
 - open netwerk sniffen
 	- data van een netwerk halen 
 		- deze vervolgens ook doorsturen naar github
@@ -28,3 +24,7 @@ AP - Project Wireless tech
 - Script dat bij reboot pull doet van github
 
 - Script dat auto pusht van scan file naar github
+
+- github scripts enkel uitvoeren als er wifi verbonden is
+
+- Sniffen van devices binnen open netwerk
