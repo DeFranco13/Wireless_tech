@@ -2,7 +2,7 @@
 
 # Pull van project
 
-./home/franco/Desktop/wifi-scanner/GithubPull.sh
+./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
 
 # Opstart Script
 
