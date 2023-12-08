@@ -4,6 +4,7 @@ import json
 import os
 import nmcli
 import nmap
+import time
 
 
 class WifiScanner:
@@ -66,7 +67,8 @@ class WifiScanner:
                 "RATE": connection.rate,
                 "SIGNAL": connection.signal,
                 "SECURITY": self.checkMode(connection.security),
-                "BSSID": connection.bssid
+                "BSSID": connection.bssid,
+                "TIMESTAMP": time.time()
             }
 
     def get_handshake(self):
