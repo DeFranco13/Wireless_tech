@@ -41,6 +41,16 @@ class WifiScanner:
                    key, value = parts[0].strip(), parts[1].strip()
                    self.wifi_networks[current_ssid][key] = value
 
+   def checkMode(self, connectionSecurity):
+       if connectionSecurity == "":
+           return "OPEN"
+       elif connectionSecurity == "WPA1":
+           return "WPA1"
+       elif connectionSecurity == "WPA2":
+           return "WPA2"
+       elif connectionSecurity == "WPA3":
+           return "WPA3"
+
    def parse_networks_linux(self):
        global connections
        connections = nmcli.device.wifi()
@@ -52,7 +62,8 @@ class WifiScanner:
               "CHAN": connection.chan,
               "RATE": connection.rate,
               "SIGNAL": connection.signal,
-              "SECURITY": connection.security,
+              "SECURITY": self.checkMode(connection.security),
+              "BSSID": connection.bssid
            }
 
    def get_handshake(self):
@@ -73,8 +84,10 @@ class WifiScanner:
               device = device_scan.scan("192.168.2.1/24", arguments='-sn', sudo=True)
               os.system(f'nmcli c delete {connection.bssid}')
 
+
+   ### MOETEN NOG TESTEN
    def pushFile():
-       if ping -c 3 1.1.1.1 &> /dev/null ; then
+       if os.popen("ping -c 3 1.1.1.1 &> /dev/null").read():
           os.system('./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPush.sh')
 
    def read_json(self):
