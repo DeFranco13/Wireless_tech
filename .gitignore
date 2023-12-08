@@ -2,3 +2,4 @@ newvenv/
 overbodig/
 __pycache__/
 README.md
+web/backend/target/
