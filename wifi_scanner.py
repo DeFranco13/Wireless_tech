@@ -45,6 +45,8 @@ class WifiScanner:
     def checkMode(self, connectionSecurity):
         if connectionSecurity == "":
             return "OPEN"
+        elif connectionSecurity == "WEP":
+            return "WEP"
         elif connectionSecurity == "WPA1":
             return "WPA1"
         elif connectionSecurity == "WPA2":
