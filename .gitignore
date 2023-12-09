@@ -1,11 +1,8 @@
 newvenv/
 overbodig/
 __pycache__/
-README.md
-<<<<<<< HEAD
-web/backend/target/
-=======
+Hotspot/backend/target/
+Hotspot/frontend/node_modules/
 .idea
 venv
 .env
->>>>>>> 354770a08571663c0b3b8b94befe8868806179a0
