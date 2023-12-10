@@ -8,7 +8,8 @@ if ping -c 3 1.1.1.1 &> /dev/null; then
 
 # Als er geen wifi is start het script
 else
-                echo "geen wifi"
+		# Hotspot hosting
+		sudo hostapd /etc/hostapd/hostapd.conf
                 #/home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
 
 fi
