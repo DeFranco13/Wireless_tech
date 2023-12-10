@@ -1,20 +1,26 @@
 #!/bin/bash
 
 # Pull van project
-
 if ping -c 3 1.1.1.1 &> /dev/null; then
-	./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
+                echo "wifi"
+                #cd /home/franco/Desktop/wifi-scanner
+                #./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
 
-# Opstart script enkel als er geen wifi is
-
-else /home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
+# Als er geen wifi is start het script
+else
+                echo "geen wifi"
+                #/home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
 
 fi
 
-# Output files van PI exporteren naar git folder
 
-if [ -f /scan.json ] ; then
+
+
+# Output files van PI exporteren naar git
+if [ -f /scan.json ]; then
 	sudo cp /scan.json /home/franco/Desktop/wifi-scanner/Output/scan.json
+fi
 
-if [ -f /devices.txt ] ; then
+if [ -f /devices.txt ]; then
 	sudo cp /devices.txt /home/franco/Desktop/wifi-scanner/Output/devices.txt
+fi

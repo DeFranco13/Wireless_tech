@@ -3,7 +3,7 @@ import subprocess
 import json
 import os
 import nmcli
-import nmap
+#import nmap
 import time
 
 
@@ -17,11 +17,11 @@ class WifiScanner:
         while True:
             self.read_json()
             self.get_networks()
-            self.sniff_wifi()
-            self.get_handshake()
-            self.deauth_wifi()
+            #self.sniff_wifi()
+            #self.get_handshake()
+            #self.deauth_wifi()
             self.log_results()
-            self.pushFile()
+            #self.pushFile()
 
     def get_networks(self):
         if self.os_computer == 'Windows':

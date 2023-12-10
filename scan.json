@@ -1,0 +1,10 @@
+{
+    "SSID": "Fransen",
+    "MODE": "Infra",
+    "CHAN": 36,
+    "RATE": 270,
+    "SIGNAL": 25,
+    "SECURITY": "WPA2",
+    "BSSID": "F4:92:BF:6E:DE:D0",
+    "TIMESTAMP": 1702230017.4101143
+}

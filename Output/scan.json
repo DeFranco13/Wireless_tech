@@ -1,9 +1,9 @@
 {
     "Fransen": {
         "MODE": "Infra",
-        "CHAN": 6,
-        "RATE": 130,
-        "SIGNAL": 39,
+        "CHAN": 36,
+        "RATE": 270,
+        "SIGNAL": 32,
         "SECURITY": "WPA2"
     },
     "Perfume Genie": {
@@ -3276,6 +3276,13 @@
         "SECURITY": "WPA2"
     },
     "Audi_MMI_5847": {
+        "MODE": "Infra",
+        "CHAN": 6,
+        "RATE": 65,
+        "SIGNAL": 0,
+        "SECURITY": "WPA2"
+    },
+    "Audi_MMI_5064": {
         "MODE": "Infra",
         "CHAN": 6,
         "RATE": 65,
