@@ -13,6 +13,12 @@
     "react-vis": "^1.12.1",
     "web-vitals": "^2.1.4"
   },
+  "overrides": {
+    "react-vis": {
+      "react": "^18.0.2",
+      "react-dom": "^18.0.2"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -36,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.6"
   }
 }
