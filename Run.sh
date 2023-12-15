@@ -3,15 +3,11 @@
 # Pull van project
 if ping -c 3 1.1.1.1 &> /dev/null; then
                 echo "wifi"
-                #cd /home/franco/Desktop/wifi-scanner
-                #./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
+                ./home/franco/Desktop/wifi-scanner/GithubScripts/GithubPull.sh
 
 # Als er geen wifi is start het script
-else
-		# Hotspot hosting
-		sudo hostapd /etc/hostapd/hostapd.conf
-                #/home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
-
+else		
+                /home/franco/Desktop/wifi-scanner/newvenv/bin/python3 /home/franco/Desktop/wifi-scanner/main.py
 fi
 
 
