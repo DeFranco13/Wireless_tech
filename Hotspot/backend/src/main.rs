@@ -7,7 +7,7 @@ use axum::response::IntoResponse;
 use axum::{Router, Json};
 use axum::routing::{post, get};
 use serde::{Deserialize, Serialize};
-use tokio::sync::broadcast::{Sender, Receiver};
+use tokio::sync::broadcast::Sender;
 use tower_http::cors::{CorsLayer, Any};
 use axum::extract::ws::Message;
 
