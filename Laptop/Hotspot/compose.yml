@@ -1,0 +1,9 @@
+services:
+  web:
+    image: "joeydewaal1/web:0.1"
+    ports:
+      - "80:3000"
+  backend:
+    image: "joeydewaal1/backend:0.1"
+    ports:
+      - "8080:8080"
