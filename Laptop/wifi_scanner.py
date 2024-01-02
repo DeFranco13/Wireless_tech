@@ -1,9 +1,12 @@
 import platform
+from time import localtime
+from datetime import datetime
 import subprocess
 import json
 import os
 import nmcli
 import time
+import requests as r
 
 
 class WifiScanner:
@@ -11,6 +14,7 @@ class WifiScanner:
         self.os_computer = platform.system()
         self.wifi_networks = {}
         self.deauth = False
+        self.scanned = []
 
     def start(self):
         while True:
@@ -64,7 +68,7 @@ class WifiScanner:
                 "SIGNAL": connection.signal,
                 "SECURITY": self.checkMode(connection.security),
                 "BSSID": connection.bssid,
-                "TIMESTAMP": time.time(),
+                "TIMESTAMP": str(datetime.now()),
                 "COORDS": "TODO"
             }
 
@@ -82,5 +86,15 @@ class WifiScanner:
             self.wifi_networks = json.load(file)
 
     def log_results(self):
+        print(self.wifi_networks)
+        if not self.wifi_networks["BSSID"] in self.scanned:
+            print(self.wifi_networks)
+            print("updated")
+            try:
+                r.post("http://localhost:8080/", json=self.wifi_networks)
+            except:
+                pass
+            self.scanned.append(self.wifi_networks["BSSID"])
+
         with open('scan.json', 'w') as file:
             json.dump(self.wifi_networks, file, indent=4)

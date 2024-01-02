@@ -1,0 +1,11 @@
+{
+    "SSID": "WiFi-2.4-A036",
+    "MODE": "Infra",
+    "CHAN": 11,
+    "RATE": 130,
+    "SIGNAL": 52,
+    "SECURITY": "WPA2",
+    "BSSID": "38:35:FB:4F:A0:3C",
+    "TIMESTAMP": "2023-12-22 13:48:42.166656",
+    "COORDS": "TODO"
+}
